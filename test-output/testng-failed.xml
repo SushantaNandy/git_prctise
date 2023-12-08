@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="sus.TestComponents.Listeners"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="error_validation(failed)">
+    <classes>
+      <class name="sus.test.errorvalidationTest">
+        <methods>
+          <include name="loginerrorvalidation"/>
+          <include name="initilizeDriver"/>
+          <include name="closeBrowser"/>
+          <include name="producterrorvalidation"/>
+        </methods>
+      </class> <!-- sus.test.errorvalidationTest -->
+    </classes>
+  </test> <!-- error_validation(failed) -->
+  <test thread-count="5" parallel="tests" name="e2e(failed)">
+    <classes>
+      <class name="sus.test.stanalone_test2">
+        <methods>
+          <include name="OrderHistoryTest"/>
+          <include name="initilizeDriver"/>
+          <include name="closeBrowser"/>
+          <include name="e2e" invocation-numbers="0 1"/>
+        </methods>
+      </class> <!-- sus.test.stanalone_test2 -->
+    </classes>
+  </test> <!-- e2e(failed) -->
+</suite> <!-- Failed suite [Suite] -->
